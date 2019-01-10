@@ -16,7 +16,10 @@ public class Appointment {
     private Doctor doctor;
     private Patient patient;
     
+    private int date;
     private String notes;
+    
+    private Prescription prescription;
 
     public Appointment(Doctor doctor, Patient patient) {
         this.doctor = doctor;
@@ -39,5 +42,9 @@ public class Appointment {
         this.patient = patient;
     }
     
+    public void attend()
+    {
+        
+    }
     
 }

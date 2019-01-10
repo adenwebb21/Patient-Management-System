@@ -15,8 +15,6 @@ public class Patient extends User{
     
     private Appointment[] appointmentHistory;
     private Appointment currentAppointment;
-    //private Prescription[] prescriptionHistory;
-    //private Prescription currentPrescription;
 
     
     public void setCurrentAppointment(Appointment currentAppointment) {
