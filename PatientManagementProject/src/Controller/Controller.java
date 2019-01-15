@@ -32,7 +32,7 @@ public class Controller implements ActionListener {
         JButton tempBtn = (JButton)e.getSource();
         String soruceName = tempBtn.getName();
         
-        System.out.println(soruceName);
+        //System.out.println(soruceName);
         /*
         if (soruceName == "btn_login")
         {

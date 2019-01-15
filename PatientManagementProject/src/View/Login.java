@@ -233,6 +233,7 @@ public class Login extends javax.swing.JFrame {
         
         System.out.println(txt_userId.getText());
         System.out.println(txt_userId.getText());
+        
         controller.LogIn(txt_userId.getText(), txt_password.getText());
         
     }//GEN-LAST:event_btn_registerNewActionPerformed
