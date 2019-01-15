@@ -6,6 +6,7 @@
 package Users;
 
 import PatientManagementModel.*;
+import java.util.ArrayList;
 
 /**
  *
@@ -15,6 +16,8 @@ public class Patient extends User{
     
     private Appointment[] appointmentHistory;
     private Appointment currentAppointment;
+    
+    private Prescription currentPrescription;
 
     
     public void setCurrentAppointment(Appointment currentAppointment) {
@@ -45,17 +48,23 @@ public class Patient extends User{
     public void setiD(String iD) {
         this.iD = iD;
     }
+
+    public Appointment[] getAppointmentHistory() {
+        return appointmentHistory;
+    }
     
     
     
-    public void rateDoctor()
+    public void rateDoctor(Doctor doctor, String rating)
     {
-        
+        ArrayList<String> temp = doctor.getDoctorRating();
+        temp.add(rating);
+        doctor.setDoctorRating(temp);
     }
     
     public void viewDoctorRating(Doctor doctor)
     {
-        
+        ArrayList<String> temp = doctor.getDoctorRating();
     }
     
     public void requestAppointment(Doctor doctor, Secretary sec)

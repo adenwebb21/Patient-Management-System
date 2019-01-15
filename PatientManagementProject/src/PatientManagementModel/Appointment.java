@@ -21,6 +21,14 @@ public class Appointment {
     
     private Prescription prescription;
 
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
+
+    public void setPrescription(Prescription prescription) {
+        this.prescription = prescription;
+    }
+   
     public Appointment(Doctor doctor, Patient patient) {
         this.doctor = doctor;
         this.patient = patient;
@@ -46,5 +54,7 @@ public class Appointment {
     {
         
     }
+    
+    
     
 }

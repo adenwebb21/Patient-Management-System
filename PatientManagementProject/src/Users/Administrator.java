@@ -5,6 +5,8 @@
  */
 package Users;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author adenw
@@ -46,12 +48,14 @@ public class Administrator extends User{
     
     public void viewDoctorRating(Doctor doctor)
     {
-        
+        ArrayList<String> temp = doctor.getDoctorRating();
     }
     
-    public void giveDoctorFeedback(Doctor doctor)
+    public void giveDoctorFeedback(Doctor doctor, String feedback)
     {
-        
+        ArrayList<String> temp = doctor.getDoctorRating();
+        temp.add(feedback);
+        doctor.setDoctorRating(temp);
     }
     
     

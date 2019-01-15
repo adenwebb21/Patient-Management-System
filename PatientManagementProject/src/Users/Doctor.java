@@ -17,22 +17,32 @@ public class Doctor extends User{
 
     
     private ArrayList<Appointment> appointments = new ArrayList();
+    private Appointment currentAppointment;
     
+    private ArrayList<String> doctorRating = new ArrayList();
     
     public Doctor(String iD) {
         super(iD);
     }
+
+    public ArrayList<String> getDoctorRating() {
+        return doctorRating;
+    }
+
+    public void setDoctorRating(ArrayList<String> doctorRating) {
+        this.doctorRating = doctorRating;
+    }
     
     
     
-    public void addNote(Appointment appointment)
+    public void addNote(String note)
     {
-        
+        currentAppointment.setNotes(note);
     }
     
     public void viewPatientHistory(Patient patient)
     {
-        
+        patient.getAppointmentHistory();
     }
     
     public void createAppointment(Appointment newAppointment)
