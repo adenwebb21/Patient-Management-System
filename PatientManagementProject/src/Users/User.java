@@ -32,6 +32,30 @@ public abstract class User {
         this.givenName = givenName;
         this.surName = surName;
     }
+
+    public String getiD() {
+        return iD;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getGivenName() {
+        return givenName;
+    }
+
+    public String getSurName() {
+        return surName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getSex() {
+        return sex;
+    }
     
     
     

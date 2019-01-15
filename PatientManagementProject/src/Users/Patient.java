@@ -52,6 +52,10 @@ public class Patient extends User{
     public Appointment[] getAppointmentHistory() {
         return appointmentHistory;
     }
+
+    public void setCurrentPrescription(Prescription currentPrescription) {
+        this.currentPrescription = currentPrescription;
+    }
     
     
     

@@ -20,8 +20,7 @@ public class Secretary extends User {
     
     public Secretary(String iD)
     {
-        super(iD);
-        
+        super(iD);       
     }
 
     public ArrayList<Patient> getWaitingForApproval() {

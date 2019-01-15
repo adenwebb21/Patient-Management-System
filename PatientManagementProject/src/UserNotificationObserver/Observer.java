@@ -11,6 +11,6 @@ package UserNotificationObserver;
  */
 public interface Observer {
     
-    void update();
+    public void update(float rate);
     
 }

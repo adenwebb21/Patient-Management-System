@@ -5,8 +5,7 @@
  */
 package Users;
 
-import PatientManagementModel.Appointment;
-import UserNotificationObserver.Observer;
+import PatientManagementModel.*;
 import java.util.ArrayList;
 
 /**
@@ -51,9 +50,10 @@ public class Doctor extends User{
         appointments.add(newAppointment);
     }
     
-    public void prescribeMedicine(Patient patient)
+    public void prescribeMedicine(Patient patient, Medicine medicine, int dosage)
     {
-        
+        Prescription newPrescription = new Prescription(patient, this, medicine, dosage);
+        patient.setCurrentPrescription(newPrescription);
     }
     
     public void requestNewMedicine()

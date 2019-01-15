@@ -20,6 +20,13 @@ public class Prescription {
     private int quantity;
     private String Dosage;
 
+    public Prescription(Patient patient, Doctor prescriber, Medicine medicine, int quantity) {
+        this.patient = patient;
+        this.prescriber = prescriber;
+        this.medicine = medicine;
+        this.quantity = quantity;
+    }
+    
     public Patient getPatient() {
         return patient;
     }
