@@ -7,6 +7,7 @@ package View;
 
 import Controller.Controller;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -28,7 +29,7 @@ public class Login extends javax.swing.JFrame {
     {
         btn_login.addActionListener(actionListen);
     }
-
+    
     /**
      * This method is called from within the constructor to initialise the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -229,12 +230,13 @@ public class Login extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(lbl_loginTitle1)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txt_fName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbl_userId1)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txt_addressLineOne, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lbl_userId6)))
+                        .addComponent(lbl_userId6))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txt_fName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lbl_userId1)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_lName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -242,12 +244,13 @@ public class Login extends javax.swing.JFrame {
                     .addComponent(txt_city, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbl_userId7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbl_userId3)
-                    .addComponent(spn_age, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txt_postCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(lbl_userId8)))
+                        .addComponent(lbl_userId8))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lbl_userId3)
+                        .addComponent(spn_age, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_sex, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -282,7 +285,17 @@ public class Login extends javax.swing.JFrame {
     private void btn_registerNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_registerNewActionPerformed
         // TODO add your handling code here:   
         
-        thisController.registerPatientButton(txt_addressLineOne.getText(), txt_city.getText(), txt_postCode.getText(), txt_fName.getText(), txt_lName.getText(), txt_sex.getText(), (int)spn_age.getValue(), txt_newPassword.getText());       
+        System.out.println(txt_addressLineOne.getText() + txt_city.getText() + txt_postCode.getText() + txt_fName.getText() + txt_lName.getText() + txt_sex.getText() + txt_newPassword.getText());
+        
+        if(txt_addressLineOne.getText().equals("") || txt_city.getText().equals("") || txt_postCode.getText().equals("") || txt_fName.getText().equals("") || txt_lName.getText().equals("") || txt_sex.getText().equals("") || txt_newPassword.getText().equals(""))
+        {
+            JOptionPane.showMessageDialog(null, "Please fill in all fields", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        else
+        {
+            thisController.registerPatientButton(txt_addressLineOne.getText(), txt_city.getText(), txt_postCode.getText(), txt_fName.getText(), txt_lName.getText(), txt_sex.getText(), (int)spn_age.getValue(), txt_newPassword.getText());
+            lbl_newUserId.setText("Your temporary ID is: " + thisController.getLastTempPatientiD() + "   Use this to log on and then get verified.");
+        }
     }//GEN-LAST:event_btn_registerNewActionPerformed
 
     private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed

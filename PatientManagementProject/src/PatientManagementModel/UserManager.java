@@ -22,6 +22,7 @@ public class UserManager {
     private int numSec = 0;
     private int numPat = 0;
     private int numAdmin = 0;
+    private int numTempPat = 0;
     
     private UserManager() {
         users = new ArrayList();
@@ -68,6 +69,10 @@ public class UserManager {
                 break;
             case 'P':
                 newId = String.format("P%04d", numPat);
+                numPat++;
+                break;
+            case 'T':
+                newId = String.format("P%04d", numTempPat);
                 numPat++;
                 break;
             default:

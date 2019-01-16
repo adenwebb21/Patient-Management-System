@@ -33,8 +33,8 @@ public class Patient extends User{
         
     }
 
-    public Patient(String addLine1, String city, String postcode, String givenName, String surName, String sex, int age, String password) {
-        super(givenName, surName, sex, age, password);
+    public Patient(String iD, String addLine1, String city, String postcode, String givenName, String surName, String sex, int age, String password) {
+        super(iD, givenName, surName, sex, age, password);
         this.addLine1 = addLine1;
         this.city = city;
         this.postcode = postcode;

@@ -25,6 +25,8 @@ public class Controller  {
     PatientView patientView;
     
     UserManager userManager;
+    
+    private String lastTempPatientiD;
 
 //    @Override
 //    public void actionPerformed (ActionEvent e)
@@ -41,6 +43,10 @@ public class Controller  {
 //        }
 //*/
 //    }
+
+    public String getLastTempPatientiD() {
+        return lastTempPatientiD;
+    }   
     
     public void LogIn(String userId, String password)
     {
@@ -86,10 +92,11 @@ public class Controller  {
         }
     }
     
-    public Boolean registerPatientButton(String addLine1, String city, String postcode, String fName, String lName, String sex, int age, String password)
+    public void registerPatientButton(String addLine1, String city, String postcode, String fName, String lName, String sex, int age, String password)
     {
-        Patient newPatient = new Patient(addLine1, city, postcode, fName, lName, sex, age, password);
-        return true;
+        lastTempPatientiD = userManager.generateUserId('T');
+        Patient newPatient = new Patient(lastTempPatientiD, addLine1, city, postcode, fName, lName, sex, age, password);
+        userManager.addUser(newPatient);        
     }
     
     public Boolean removeUserAccount(String iD)
