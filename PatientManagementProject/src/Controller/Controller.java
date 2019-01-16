@@ -86,10 +86,11 @@ public class Controller  {
         }
     }
     
-//    public Boolean registerPatientButton()
-//    {
-//        
-//    }
+    public Boolean registerPatientButton(String addLine1, String city, String postcode, String fName, String lName, String sex, int age, String password)
+    {
+        Patient newPatient = new Patient(addLine1, city, postcode, fName, lName, sex, age, password);
+        return true;
+    }
     
     public Boolean removeUserAccount(String iD)
     {

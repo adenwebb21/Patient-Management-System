@@ -28,9 +28,11 @@ public abstract class User {
         this.surName = surName;
     }
 
-    public User(String givenName, String surName) {
+    public User(String givenName, String surName, String sex, int age, String password) {
         this.givenName = givenName;
         this.surName = surName;
+        this.sex = sex;
+        this.password = password;
     }
 
     public User(String iD, String password, String givenName, String surName, int age, String sex) {

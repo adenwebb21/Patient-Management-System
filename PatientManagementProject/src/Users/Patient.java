@@ -19,6 +19,8 @@ public class Patient extends User{
     
     private Prescription currentPrescription;
 
+    private String addLine1, city, postcode;
+    
     
     public void setCurrentAppointment(Appointment currentAppointment) {
         System.out.println("Recieved appointment with " + currentAppointment.getDoctor().iD);
@@ -31,9 +33,14 @@ public class Patient extends User{
         
     }
 
-    public Patient(String givenName, String surName) {
-        super(givenName, surName);
+    public Patient(String addLine1, String city, String postcode, String givenName, String surName, String sex, int age, String password) {
+        super(givenName, surName, sex, age, password);
+        this.addLine1 = addLine1;
+        this.city = city;
+        this.postcode = postcode;
     }
+    
+    
 
     public void requestAccountCreation(Secretary sec) {
         

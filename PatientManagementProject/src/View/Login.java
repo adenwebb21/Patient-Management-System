@@ -61,11 +61,11 @@ public class Login extends javax.swing.JFrame {
         btn_registerNew = new javax.swing.JButton();
         lbl_newUserId = new javax.swing.JLabel();
         lbl_userId6 = new javax.swing.JLabel();
-        txt_fName1 = new javax.swing.JTextField();
-        txt_fName2 = new javax.swing.JTextField();
+        txt_addressLineOne = new javax.swing.JTextField();
+        txt_city = new javax.swing.JTextField();
         lbl_userId7 = new javax.swing.JLabel();
         lbl_userId8 = new javax.swing.JLabel();
-        txt_fName3 = new javax.swing.JTextField();
+        txt_postCode = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -162,6 +162,12 @@ public class Login extends javax.swing.JFrame {
         lbl_userId6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lbl_userId6.setText("Address Line 1");
 
+        txt_addressLineOne.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_addressLineOneActionPerformed(evt);
+            }
+        });
+
         lbl_userId7.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lbl_userId7.setText("City");
 
@@ -209,12 +215,12 @@ public class Login extends javax.swing.JFrame {
                                     .addComponent(lbl_userId7, javax.swing.GroupLayout.Alignment.TRAILING))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txt_fName1, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txt_fName2, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(txt_addressLineOne, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txt_city, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                 .addComponent(lbl_userId8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txt_fName3, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(txt_postCode, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18))))
         );
         jPanel2Layout.setVerticalGroup(
@@ -227,20 +233,20 @@ public class Login extends javax.swing.JFrame {
                     .addComponent(txt_fName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbl_userId1)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txt_fName1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txt_addressLineOne, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(lbl_userId6)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_lName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbl_userId2)
-                    .addComponent(txt_fName2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txt_city, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lbl_userId7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl_userId3)
                     .addComponent(spn_age, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txt_fName3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txt_postCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(lbl_userId8)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -263,11 +269,11 @@ public class Login extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 667, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 667, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -276,14 +282,17 @@ public class Login extends javax.swing.JFrame {
     private void btn_registerNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_registerNewActionPerformed
         // TODO add your handling code here:   
         
-        
-        
+        thisController.registerPatientButton(txt_addressLineOne.getText(), txt_city.getText(), txt_postCode.getText(), txt_fName.getText(), txt_lName.getText(), txt_sex.getText(), (int)spn_age.getValue(), txt_newPassword.getText());       
     }//GEN-LAST:event_btn_registerNewActionPerformed
 
     private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
         // TODO add your handling code here:      
         thisController.LogIn(txt_userId.getText(), txt_password.getText());
     }//GEN-LAST:event_btn_loginActionPerformed
+
+    private void txt_addressLineOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_addressLineOneActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_addressLineOneActionPerformed
 
     /**
      * @param args the command line arguments
@@ -340,13 +349,13 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_userId7;
     private javax.swing.JLabel lbl_userId8;
     private javax.swing.JSpinner spn_age;
+    private javax.swing.JTextField txt_addressLineOne;
+    private javax.swing.JTextField txt_city;
     private javax.swing.JTextField txt_fName;
-    private javax.swing.JTextField txt_fName1;
-    private javax.swing.JTextField txt_fName2;
-    private javax.swing.JTextField txt_fName3;
     private javax.swing.JTextField txt_lName;
     private javax.swing.JTextField txt_newPassword;
     private javax.swing.JTextField txt_password;
+    private javax.swing.JTextField txt_postCode;
     private javax.swing.JTextField txt_sex;
     private javax.swing.JTextField txt_userId;
     // End of variables declaration//GEN-END:variables
