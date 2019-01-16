@@ -5,6 +5,7 @@
  */
 package Users;
 
+import PatientManagementModel.UserManager;
 import java.util.ArrayList;
 
 /**
@@ -13,8 +14,14 @@ import java.util.ArrayList;
  */
 public class Administrator extends User{
 
+    private UserManager userManager = UserManager.getInstance();
+    
     public Administrator(String iD) {
         super(iD);
+    }
+
+    public Administrator(String iD, String password, String givenName, String surName, int age, String sex) {
+        super(iD, password, givenName, surName, age, sex);
     }
     
     public void createOwnAccount()
@@ -22,7 +29,7 @@ public class Administrator extends User{
         
     }
     
-    public Doctor addDoctorAccount(String iD)
+    public Doctor addDoctorAccount(String iD, String password, String givenName, String surName, int age, String sex)
     {
         Doctor newDoc = new Doctor(iD);
         System.out.println(this.iD + ": Creating new doctor account with ID " + iD);
@@ -34,7 +41,7 @@ public class Administrator extends User{
         
     }
     
-    public Secretary addSecretaryAccount(String iD)
+    public Secretary addSecretaryAccount(String iD, String password,String givenName, String surName, int age, String sex)
     {
         Secretary newSec = new Secretary("iD");
         System.out.println(this.iD + ": Creating new secretary account with ID " + iD);

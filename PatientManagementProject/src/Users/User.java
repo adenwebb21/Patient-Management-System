@@ -33,6 +33,17 @@ public abstract class User {
         this.surName = surName;
     }
 
+    public User(String iD, String password, String givenName, String surName, int age, String sex) {
+        this.iD = iD;
+        this.password = password;
+        this.givenName = givenName;
+        this.surName = surName;
+        this.age = age;
+        this.sex = sex;
+    }
+    
+    
+
     public String getiD() {
         return iD;
     }

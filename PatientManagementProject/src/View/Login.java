@@ -244,10 +244,7 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_registerNewActionPerformed
 
     private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
-        // TODO add your handling code here:
-        System.out.println(txt_userId.getText());
-        System.out.println(txt_userId.getText());
-        
+        // TODO add your handling code here:      
         controller.LogIn(txt_userId.getText(), txt_password.getText());
     }//GEN-LAST:event_btn_loginActionPerformed
 

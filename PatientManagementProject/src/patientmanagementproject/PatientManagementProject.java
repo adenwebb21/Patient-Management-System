@@ -33,21 +33,21 @@ public class PatientManagementProject {
         //login.AddListener(cont);
         login.setVisible(true);
         
-        Administrator a1 = new Administrator("a0000");
+        Administrator a1 = new Administrator(userManager.generateUserId('A'), "admin0", "Wilma", "Russel", 34, "female");
         
         userManager.addUser(a1);
+             
+        Doctor d1 = a1.addDoctorAccount(userManager.generateUserId('D'), "doc0", "Paul", "Thorne", 23, "male");
         
-        
-        Doctor d1 = a1.addDoctorAccount("d0000");
-        Secretary s1 = a1.addSecretaryAccount("s0000");
-        
-        Patient p1 = new Patient("Sue", "Green");
-        System.out.println("New patient created - currently has no ID");
-        p1.requestAccountCreation(s1);
-        
-        s1.approvePendingPatientAccount(p1);
-        
-        p1.requestAppointment(d1, s1);
+        //Secretary s1 = a1.addSecretaryAccount(userManager.generateUserId('S'));
+//        
+//        Patient p1 = new Patient("Sue", "Green");
+//        System.out.println("New patient created - currently has no ID");
+//        p1.requestAccountCreation(s1);
+//        
+//        s1.approvePendingPatientAccount(p1);
+//        
+//        p1.requestAppointment(d1, s1);
     }
     
 }

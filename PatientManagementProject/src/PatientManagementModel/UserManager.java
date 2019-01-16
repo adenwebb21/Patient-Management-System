@@ -18,6 +18,11 @@ public class UserManager {
     
     private ArrayList<User> users;
     
+    private int numDoc = 0;
+    private int numSec = 0;
+    private int numPat = 0;
+    private int numAdmin = 0;
+    
     private UserManager() {
         users = new ArrayList();
     }
@@ -41,6 +46,65 @@ public class UserManager {
     public void addUser(User newUser)
     {
         users.add(newUser);
+    }
+    
+    public String generateUserId(char type)
+    {
+        String newId = "";
+        
+        switch(type)
+        {
+            case 'D':
+                newId = String.format("D%04d", numDoc);
+                numDoc++;
+                break;
+            case 'A':
+                newId = String.format("A%04d", numAdmin);
+                numAdmin++;
+                break;
+            case 'S':
+                newId = String.format("S%04d", numSec);
+                numSec++;
+                break;
+            case 'P':
+                newId = String.format("P%04d", numPat);
+                numPat++;
+                break;
+            default:
+                break;
+        }
+        
+        return newId;
+    }
+    
+    public ArrayList<User> returnAllDoctors()
+    {
+        ArrayList<User> tempDoctors = new ArrayList();
+        
+        for(User user : users)
+        {
+            if(user.getiD().charAt(0) == 'D')
+            {
+                tempDoctors.add(user);
+            }
+        }
+        
+        return tempDoctors;
+    }
+    
+    public ArrayList<User> returnAllSecretaries()
+    {
+        ArrayList<User> tempSecretaries = new ArrayList();
+        
+        for(User user : users)
+        {
+            if(user.getiD().charAt(0) == 'S')
+            {
+                tempSecretaries.add(user);
+            }
+        }
+        
+        return tempSecretaries;
     }
     
 }

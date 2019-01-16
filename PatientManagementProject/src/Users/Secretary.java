@@ -6,6 +6,7 @@
 package Users;
 
 import PatientManagementModel.Appointment;
+import PatientManagementModel.UserManager;
 import java.util.ArrayList;
 
 /**
@@ -17,10 +18,16 @@ public class Secretary extends User {
     private ArrayList<Patient> waitingForApproval = new ArrayList();
     private ArrayList<Appointment> appointmentRequests = new ArrayList();
     
+    private UserManager userManager = UserManager.getInstance();
+    
     
     public Secretary(String iD)
     {
         super(iD);       
+    }
+
+    public Secretary(String iD, String password, String givenName, String surName, int age, String sex) {
+        super(iD, password, givenName, surName, age, sex);
     }
 
     public ArrayList<Patient> getWaitingForApproval() {
@@ -45,7 +52,7 @@ public class Secretary extends User {
         if(waitingForApproval.contains(p))
         {
             System.out.println(this.iD + ": Assigning patient " + p.givenName + " " + p.surName + " a new ID");
-            p.setiD("p0000");
+            p.setiD(userManager.generateUserId('C'));
             System.out.println(this.iD + ": New ID is " + p.iD);
             
             return p;

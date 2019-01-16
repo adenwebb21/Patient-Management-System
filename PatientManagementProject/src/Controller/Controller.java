@@ -20,7 +20,7 @@ import javax.swing.JButton;
 
 public class Controller  {
     
-    //Login login;
+    Login login;
     DoctorView doctorView;
     AdminView adminView;
     SecretaryView secretaryView;

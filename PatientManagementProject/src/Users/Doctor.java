@@ -24,6 +24,10 @@ public class Doctor extends User{
         super(iD);
     }
 
+    public Doctor(String iD, String password, String givenName, String surName, int age, String sex) {
+        super(iD, password, givenName, surName, age, sex);
+    }
+
     public ArrayList<String> getDoctorRating() {
         return doctorRating;
     }
