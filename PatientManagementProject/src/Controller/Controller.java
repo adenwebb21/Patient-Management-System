@@ -18,7 +18,7 @@ import javax.swing.JButton;
  * @author awebb4
  */
 
-public class Controller implements ActionListener {
+public class Controller  {
     
     //Login login;
     DoctorView doctorView;
@@ -26,21 +26,21 @@ public class Controller implements ActionListener {
     SecretaryView secretaryView;
     PatientView patientView;
 
-    @Override
-    public void actionPerformed (ActionEvent e)
-    {        
-        JButton tempBtn = (JButton)e.getSource();
-        String soruceName = tempBtn.getName();
-        
-        //System.out.println(soruceName);
-        /*
-        if (soruceName == "btn_login")
-        {
-            System.out.println("Dab it works my G!");
-            
-        }
-*/
-    }
+//    @Override
+//    public void actionPerformed (ActionEvent e)
+//    {        
+//        JButton tempBtn = (JButton)e.getSource();
+//        String soruceName = tempBtn.getName();
+//        
+//        //System.out.println(soruceName);
+//        /*
+//        if (soruceName == "btn_login")
+//        {
+//            System.out.println("Dab it works my G!");
+//            
+//        }
+//*/
+//    }
     
     public void LogIn(String userId, String password)
     {

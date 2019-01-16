@@ -30,7 +30,7 @@ public class PatientManagementProject {
                
         Login login = new Login();
         
-        login.AddListener(cont);
+        //login.AddListener(cont);
         login.setVisible(true);
         
         Administrator a1 = new Administrator("a0000");
