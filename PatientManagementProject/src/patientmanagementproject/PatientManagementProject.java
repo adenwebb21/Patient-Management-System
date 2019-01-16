@@ -28,7 +28,7 @@ public class PatientManagementProject {
         
         Controller cont = new Controller();
                
-        Login login = new Login();
+        Login login = new Login(cont);
         
         //login.AddListener(cont);
         login.setVisible(true);
@@ -38,6 +38,10 @@ public class PatientManagementProject {
         userManager.addUser(a1);
              
         Doctor d1 = a1.addDoctorAccount(userManager.generateUserId('D'), "doc0", "Paul", "Thorne", 23, "male");
+        userManager.addUser(d1);
+        
+        Secretary s1 = a1.addSecretaryAccount(userManager.generateUserId('S'), "sec0", "Georga", "Huynh", 32, "female");
+        userManager.addUser(s1);
         
         //Secretary s1 = a1.addSecretaryAccount(userManager.generateUserId('S'));
 //        

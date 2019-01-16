@@ -107,4 +107,25 @@ public class UserManager {
         return tempSecretaries;
     }
     
+    public Boolean RemoveUserAccount(String iD)
+    {
+        char tempFChar = iD.charAt(0);
+        
+        for(User user : users)
+        {
+            if(user.getiD().equals(iD) && (tempFChar == 'S' || tempFChar == 'D'))
+            {
+                users.remove(user);
+                return true;
+            }
+        }
+        
+        return false;
+    }
+    
+//    public Boolean registerNewPatient()
+//    {
+//        
+//    }
+    
 }

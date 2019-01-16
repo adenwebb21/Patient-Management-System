@@ -6,12 +6,10 @@
 package Controller;
 
 import PatientManagementModel.UserManager;
-import Users.User;
+import Users.*;
 import View.*;
 import javax.swing.JOptionPane;
-import java.awt.event.ActionListener; 
-import java.awt.event.ActionEvent; 
-import javax.swing.JButton;
+import java.util.ArrayList;
 
 /**
  *
@@ -25,6 +23,8 @@ public class Controller  {
     AdminView adminView;
     SecretaryView secretaryView;
     PatientView patientView;
+    
+    UserManager userManager;
 
 //    @Override
 //    public void actionPerformed (ActionEvent e)
@@ -46,7 +46,7 @@ public class Controller  {
     {
         Boolean correctLogin = false;
         
-        UserManager userManager = UserManager.getInstance();
+        userManager = UserManager.getInstance();
         
         for(User user : userManager.getUsers())
         {
@@ -59,7 +59,7 @@ public class Controller  {
                 switch(user.getiD().charAt(0))
                 {
                     case 'A':
-                        adminView = new AdminView();
+                        adminView = new AdminView(this);
                         adminView.setVisible(true);
                         break;
                     case 'S':
@@ -84,5 +84,52 @@ public class Controller  {
         {
             JOptionPane.showMessageDialog(null, "Incorrect Login", "Error", JOptionPane.ERROR_MESSAGE);
         }
+    }
+    
+//    public Boolean registerPatientButton()
+//    {
+//        
+//    }
+    
+    public Boolean removeUserAccount(String iD)
+    {
+        if(userManager.RemoveUserAccount(iD))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    
+    public Boolean createNewUser(char type, String fName, String lName, int age, String pWord, String sex)
+    {
+        User temp;
+        
+        if(type == 'D')
+        {
+            temp = new Doctor(userManager.generateUserId('D'), pWord, fName, lName, age, sex);
+            userManager.addUser(temp);
+        }
+        else if(type == 'S')
+        {
+            temp = new Secretary(userManager.generateUserId('S'), pWord, fName, lName, age, sex);
+            userManager.addUser(temp);
+        }
+              
+        return true;
+    }
+    
+    public ArrayList<User> getAllDoctors()
+    {
+        ArrayList<User> temp = userManager.returnAllDoctors();
+        return temp;
+    }
+    
+    public ArrayList<User> getAllSecs()
+    {
+        ArrayList<User> temp = userManager.returnAllSecretaries();
+        return temp;
     }
 }

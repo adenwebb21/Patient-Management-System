@@ -31,7 +31,7 @@ public class Administrator extends User{
     
     public Doctor addDoctorAccount(String iD, String password, String givenName, String surName, int age, String sex)
     {
-        Doctor newDoc = new Doctor(iD);
+        Doctor newDoc = new Doctor(iD, password, givenName, surName, age, sex);
         System.out.println(this.iD + ": Creating new doctor account with ID " + iD);
         return newDoc;
     }
@@ -43,7 +43,7 @@ public class Administrator extends User{
     
     public Secretary addSecretaryAccount(String iD, String password,String givenName, String surName, int age, String sex)
     {
-        Secretary newSec = new Secretary("iD");
+        Secretary newSec = new Secretary(iD, password, givenName, surName, age, sex);
         System.out.println(this.iD + ": Creating new secretary account with ID " + iD);
         return newSec;
     }
