@@ -17,9 +17,10 @@ public class UserManager {
 
     private static UserManager single_instance = null;
     
-    private ArrayList<User> users;
-    
+    private ArrayList<User> users;   
     private ArrayList<User> unverifiedPatients;
+    
+    private ArrayList<Appointment> proposedAppointments;
     
     private int numDoc = 0;
     private int numSec = 0;
@@ -32,6 +33,10 @@ public class UserManager {
         unverifiedPatients = new ArrayList();
     }
     
+    /**
+     *
+     * @return
+     */
     public static UserManager getInstance()
     {
         if (single_instance == null) 
@@ -40,14 +45,26 @@ public class UserManager {
         return single_instance;
     }
 
+    /**
+     *
+     * @return
+     */
     public ArrayList<User> getUsers() {
         return users;
     }
 
+    /**
+     *
+     * @param users
+     */
     public void setUsers(ArrayList<User> users) {
         this.users = users;
     }
     
+    /**
+     *
+     * @param newUser
+     */
     public void addUser(User newUser)
     {
         users.add(newUser);
@@ -59,11 +76,20 @@ public class UserManager {
         }
     }
     
+    /**
+     *
+     * @param newPat
+     */
     public void addUnverified(User newPat)
     {
         unverifiedPatients.add(newPat);
     }
     
+    /**
+     *
+     * @param type
+     * @return
+     */
     public String generateUserId(char type)
     {
         String newId = "";
@@ -97,6 +123,10 @@ public class UserManager {
         return newId;
     }
     
+    /**
+     *
+     * @return
+     */
     public ArrayList<User> returnAllDoctors()
     {
         ArrayList<User> tempDoctors = new ArrayList();
@@ -112,6 +142,10 @@ public class UserManager {
         return tempDoctors;
     }
     
+    /**
+     *
+     * @return
+     */
     public ArrayList<User> returnAllUnverified()
     {
         ArrayList<User> tempUnverified = new ArrayList();
@@ -127,6 +161,10 @@ public class UserManager {
         return tempUnverified;
     }
     
+    /**
+     *
+     * @return
+     */
     public ArrayList<User> returnAllSecretaries()
     {
         ArrayList<User> tempSecretaries = new ArrayList();
@@ -142,6 +180,11 @@ public class UserManager {
         return tempSecretaries;
     }
     
+    /**
+     *
+     * @param iD
+     * @return
+     */
     public Boolean RemoveUserAccount(String iD)
     {
         char tempFChar = iD.charAt(0);
@@ -158,6 +201,11 @@ public class UserManager {
         return false;
     }
     
+    /**
+     *
+     * @param iD
+     * @return
+     */
     public Boolean validatePatient(String iD)
     {
         
@@ -178,6 +226,22 @@ public class UserManager {
         return false;
     }
     
+    /**
+     *
+     * @param doctorId
+     * @param patientId
+     * @param date
+     */
+    public void addProposedAppointmentToList(String doctorId, String patientId, String date)
+    {
+        
+    }
+    
+    /**
+     *
+     * @param iD
+     * @return
+     */
     public Boolean checkIfUnverified(String iD)
     {
         for(User user : unverifiedPatients)

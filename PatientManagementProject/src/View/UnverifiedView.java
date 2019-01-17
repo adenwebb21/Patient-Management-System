@@ -19,18 +19,27 @@ public class UnverifiedView extends javax.swing.JFrame {
     private String iDNumber;
     /**
      * Creates new form UnverifiedView
+     * @param controller
      */
     public UnverifiedView(Controller controller) {
         initComponents();
         thisController = controller;      
     }
     
+    /**
+     *
+     * @param status 
+     * @param iDNums
+     */
     public void isUserVerified(Boolean status, String iDNums)
     {
         iDNumber = iDNums;
         verificationStatus = status;
     }
     
+    /**
+     *
+     */
     public void displayVerificationStatus()
     {
         if(verificationStatus)
@@ -105,9 +114,7 @@ public class UnverifiedView extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btn_logOutActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+
 //    public static void main(String args[]) {
 //        /* Set the Nimbus look and feel */
 //        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

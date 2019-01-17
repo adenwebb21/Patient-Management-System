@@ -16,19 +16,45 @@ public class Administrator extends User{
 
     private UserManager userManager = UserManager.getInstance();
     
+    /**
+     *
+     * @param iD
+     */
     public Administrator(String iD) {
         super(iD);
     }
 
+    /**
+     *
+     * @param iD
+     * @param password
+     * @param givenName
+     * @param surName
+     * @param age
+     * @param sex
+     */
     public Administrator(String iD, String password, String givenName, String surName, int age, String sex) {
         super(iD, password, givenName, surName, age, sex);
     }
     
+    /**
+     *
+     */
     public void createOwnAccount()
     {
         
     }
     
+    /**
+     *
+     * @param iD
+     * @param password
+     * @param givenName
+     * @param surName
+     * @param age
+     * @param sex
+     * @return
+     */
     public Doctor addDoctorAccount(String iD, String password, String givenName, String surName, int age, String sex)
     {
         Doctor newDoc = new Doctor(iD, password, givenName, surName, age, sex);
@@ -36,11 +62,24 @@ public class Administrator extends User{
         return newDoc;
     }
     
+    /**
+     *
+     */
     public void removeDoctorAccount()
     {
         
     }
     
+    /**
+     *
+     * @param iD
+     * @param password
+     * @param givenName
+     * @param surName
+     * @param age
+     * @param sex
+     * @return
+     */
     public Secretary addSecretaryAccount(String iD, String password,String givenName, String surName, int age, String sex)
     {
         Secretary newSec = new Secretary(iD, password, givenName, surName, age, sex);
@@ -48,16 +87,28 @@ public class Administrator extends User{
         return newSec;
     }
     
+    /**
+     *
+     */
     public void removeSecretaryAccount()
     {
         
     }
     
+    /**
+     *
+     * @param doctor
+     */
     public void viewDoctorRating(Doctor doctor)
     {
         ArrayList<String> temp = doctor.getDoctorRating();
     }
     
+    /**
+     *
+     * @param doctor
+     * @param feedback
+     */
     public void giveDoctorFeedback(Doctor doctor, String feedback)
     {
         ArrayList<String> temp = doctor.getDoctorRating();

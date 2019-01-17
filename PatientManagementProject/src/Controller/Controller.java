@@ -45,10 +45,20 @@ public class Controller  {
 //*/
 //    }
 
+    /**
+     *
+     * @return
+     */
+
     public String getLastTempPatientiD() {
         return lastTempPatientiD;
     }   
     
+    /**
+     *
+     * @param userId
+     * @param password
+     */
     public void LogIn(String userId, String password)
     {
         Boolean correctLogin = false;
@@ -72,7 +82,8 @@ public class Controller  {
                         secretaryView.setVisible(true);
                         break;
                     case 'P':
-                        patientView = new PatientView();
+                        patientView = new PatientView(this);
+                        patientView.SetCurrentPatient(user.getiD());
                         patientView.setVisible(true);
                         break;
                     case 'D':
@@ -109,11 +120,25 @@ public class Controller  {
         }
     }
     
+    /**
+     *
+     */
     public void logOut()
     {
         login.setVisible(true);
     }
     
+    /**
+     *
+     * @param addLine1
+     * @param city
+     * @param postcode
+     * @param fName
+     * @param lName
+     * @param sex
+     * @param age
+     * @param password
+     */
     public void registerPatientButton(String addLine1, String city, String postcode, String fName, String lName, String sex, int age, String password)
     {
         lastTempPatientiD = userManager.generateUserId('T');
@@ -122,6 +147,11 @@ public class Controller  {
         userManager.addUnverified(newPatient);
     }
     
+    /**
+     *
+     * @param iD
+     * @return
+     */
     public Boolean removeUserAccount(String iD)
     {
         if(userManager.RemoveUserAccount(iD))
@@ -134,6 +164,16 @@ public class Controller  {
         }
     }
     
+    /**
+     *
+     * @param type
+     * @param fName
+     * @param lName
+     * @param age
+     * @param pWord
+     * @param sex
+     * @return
+     */
     public Boolean createNewUser(char type, String fName, String lName, int age, String pWord, String sex)
     {
         User temp;
@@ -153,24 +193,52 @@ public class Controller  {
         return true;
     }
     
+    /**
+     *
+     * @return
+     */
     public ArrayList<User> getAllDoctors()
     {
         ArrayList<User> temp = userManager.returnAllDoctors();
         return temp;
     }
     
+    /**
+     *
+     * @return
+     */
     public ArrayList<User> getAllSecs()
     {
         ArrayList<User> temp = userManager.returnAllSecretaries();
         return temp;
     }
     
+    /**
+     *
+     * @return
+     */
     public ArrayList<User> getAllUnverified()
     {
         ArrayList<User> temp = userManager.returnAllUnverified();
         return temp;
     }
     
+    /**
+     *
+     * @param doctorId
+     * @param date
+     * @param patientId
+     */
+    public void proposeAppointment(String doctorId, String date, String patientId)
+    {
+        userManager.addProposedAppointmentToList(doctorId, patientId, date);
+    }
+    
+    /**
+     *
+     * @param iDToValidate
+     * @return
+     */
     public Boolean validatePatient(String iDToValidate)
     {
         if(userManager.validatePatient(iDToValidate))

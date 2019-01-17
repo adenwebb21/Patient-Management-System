@@ -11,8 +11,21 @@ package UserNotificationObserver;
  */
 public interface Observable {
     
+    /**
+     *
+     * @param o
+     */
     public void registerObserver(Observer o);
+
+    /**
+     *
+     * @param o
+     */
     public void removeObserver(Observer o);
+
+    /**
+     *
+     */
     public void notifyObservers();
 
 }

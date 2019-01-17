@@ -19,12 +19,17 @@ public class Login extends javax.swing.JFrame {
     
     /**
      * Creates new form Login
+     * @param controller
      */
     public Login(Controller controller) {
         initComponents();
         thisController = controller;
     }
     
+    /**
+     *
+     * @param actionListen
+     */
     public void AddListener(ActionListener actionListen)
     {
         btn_login.addActionListener(actionListen);
@@ -312,9 +317,7 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_addressLineOneActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+
 //    public static void main(String args[]) {
 //        /* Set the Nimbus look and feel */
 //        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

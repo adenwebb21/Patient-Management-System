@@ -11,6 +11,10 @@ package UserNotificationObserver;
  */
 public interface Observer {
     
+    /**
+     *
+     * @param rate
+     */
     public void update(float rate);
     
 }

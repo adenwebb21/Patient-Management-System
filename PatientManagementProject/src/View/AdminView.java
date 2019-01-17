@@ -24,6 +24,7 @@ public class AdminView extends javax.swing.JFrame {
     private DefaultTableModel docTableModel, secTableModel;
     /**
      * Creates new form AdminView
+     * @param controller
      */
     public AdminView(Controller controller) {
         initComponents();

@@ -20,25 +20,50 @@ public class Secretary extends User {
     
     private UserManager userManager = UserManager.getInstance();
     
-    
+    /**
+     *
+     * @param iD
+     */
     public Secretary(String iD)
     {
         super(iD);       
     }
 
+    /**
+     *
+     * @param iD
+     * @param givenName
+     * @param surName
+     * @param sex
+     * @param age
+     * @param password
+     */
     public Secretary(String iD, String givenName, String surName, String sex, int age, String password) {
         super(iD, givenName, surName, sex, age, password);
     }
 
+    /**
+     *
+     * @return
+     */
     public ArrayList<Patient> getWaitingForApproval() {
         return waitingForApproval;
     }
 
+    /**
+     *
+     * @param patientToApprove
+     */
     public void addToWaitingListForApproval(Patient patientToApprove) {
         System.out.println(this.iD + ": Added patient " + patientToApprove.iD + " to waiting list");
         waitingForApproval.add(patientToApprove);
     }
     
+    /**
+     *
+     * @param idealDoc
+     * @param patient
+     */
     public void addToAppointmentRequests(Doctor idealDoc, Patient patient)
     {
         System.out.println(this.iD + ": Added request for appointment with " + idealDoc.iD + " to secretaries tasks list");
@@ -47,6 +72,11 @@ public class Secretary extends User {
         createAppointment(newApp);
     }
 
+    /**
+     *
+     * @param p
+     * @return
+     */
     public Patient approvePendingPatientAccount(Patient p) {
         
         if(waitingForApproval.contains(p))
@@ -64,6 +94,10 @@ public class Secretary extends User {
         }
     }
     
+    /**
+     *
+     * @param app
+     */
     public void createAppointment(Appointment app)
     {
         System.out.println("Creating an appointment for " + app.getPatient().iD + " with " + app.getDoctor().iD);
@@ -71,21 +105,33 @@ public class Secretary extends User {
         app.getPatient().setCurrentAppointment(app);
     }
     
+    /**
+     *
+     */
     public void giveMedicine()
     {
         
     }
     
+    /**
+     *
+     */
     public void orderNewMedicine()
     {
         
     }
     
+    /**
+     *
+     */
     public void removePatient()
     {
         
     }
     
+    /**
+     *
+     */
     public void approvePatientAccountTermination()
     {
         
