@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 
 /**
- *
+ * This is the class which controls the view component for admins
  * @author awebb4
  */
 public class AdminView extends javax.swing.JFrame {
@@ -24,7 +24,7 @@ public class AdminView extends javax.swing.JFrame {
     private DefaultTableModel docTableModel, secTableModel;
     /**
      * Creates new form AdminView
-     * @param controller
+     * @param controller the controller is passed in to create a link 
      */
     public AdminView(Controller controller) {
         initComponents();

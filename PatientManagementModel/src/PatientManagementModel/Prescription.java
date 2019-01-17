@@ -8,7 +8,7 @@ package PatientManagementModel;
 import Users.*;
 
 /**
- *
+ * This class will be sued to create prescription for patients
  * @author awebb4
  */
 public class Prescription {
@@ -21,11 +21,11 @@ public class Prescription {
     private String Dosage;
 
     /**
-     *
-     * @param patient
-     * @param prescriber
-     * @param medicine
-     * @param quantity
+     * The constructor for a patient
+     * @param patient The patient
+     * @param prescriber The doctor
+     * @param medicine The type of medicine
+     * @param quantity The dosage of the medicine
      */
     public Prescription(Patient patient, Doctor prescriber, Medicine medicine, int quantity) {
         this.patient = patient;

@@ -6,7 +6,7 @@
 package Users;
 
 /**
- *
+ * This is the abstract user class that all other user types inherit from
  * @author adenw
  */
 public abstract class User {

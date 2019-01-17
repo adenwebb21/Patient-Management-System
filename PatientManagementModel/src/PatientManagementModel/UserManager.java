@@ -10,7 +10,7 @@ import Users.User;
 import java.util.ArrayList;
 
 /**
- *
+ * This class is a singleton class which deals with the user details of the project
  * @author awebb4
  */
 public class UserManager {
@@ -34,8 +34,8 @@ public class UserManager {
     }
     
     /**
-     *
-     * @return
+     * This allows the singular instance to be accessed from anywhere
+     * @return 
      */
     public static UserManager getInstance()
     {
@@ -46,15 +46,15 @@ public class UserManager {
     }
 
     /**
-     *
-     * @return
+     * Gets a list of all the users currently registered
+     * @return Returns the list
      */
     public ArrayList<User> getUsers() {
         return users;
     }
 
     /**
-     *
+     * 
      * @param users
      */
     public void setUsers(ArrayList<User> users) {
@@ -62,8 +62,8 @@ public class UserManager {
     }
     
     /**
-     *
-     * @param newUser
+     * Adds a user to the list of currently active users
+     * @param newUser This is the new user to be added
      */
     public void addUser(User newUser)
     {
@@ -77,18 +77,18 @@ public class UserManager {
     }
     
     /**
-     *
-     * @param newPat
+     * This adds a new patient to the list of patients who are yet to be verified by a secretary
+     * @param newPat This is the new user to be added
      */
     public void addUnverified(User newPat)
     {
         unverifiedPatients.add(newPat);
     }
     
-    /**
-     *
-     * @param type
-     * @return
+    /** 
+     * This method is used to generate a user ID for the user
+     * @param type Takes in a  character which indicates the type of user to create
+     * @return returns a string which is the new ID
      */
     public String generateUserId(char type)
     {
@@ -124,7 +124,7 @@ public class UserManager {
     }
     
     /**
-     *
+     * Returns a list of all the doctors currently registered
      * @return
      */
     public ArrayList<User> returnAllDoctors()
@@ -143,7 +143,7 @@ public class UserManager {
     }
     
     /**
-     *
+     * Returns a list of all the unverified patients that are registered
      * @return
      */
     public ArrayList<User> returnAllUnverified()
@@ -162,7 +162,7 @@ public class UserManager {
     }
     
     /**
-     *
+     * Returns a list of all the secretaries that are registered in the project
      * @return
      */
     public ArrayList<User> returnAllSecretaries()
@@ -181,8 +181,8 @@ public class UserManager {
     }
     
     /**
-     *
-     * @param iD
+     * Removes a user account from the system, only used by the admin for doctors or secretaries
+     * @param iD The ID of the user to be removed
      * @return
      */
     public Boolean RemoveUserAccount(String iD)
@@ -202,9 +202,9 @@ public class UserManager {
     }
     
     /**
-     *
-     * @param iD
-     * @return
+     * This is a method used to validate a patient and make them a properly registered member
+     * @param iD The ID of the patient to validate
+     * @return A boolean indicating whether or not the validation was successful
      */
     public Boolean validatePatient(String iD)
     {
@@ -227,7 +227,7 @@ public class UserManager {
     }
     
     /**
-     *
+     * This function will add the proposed appointment to a list of proposed appointments to be viewwed by the secretaries
      * @param doctorId
      * @param patientId
      * @param date
@@ -238,8 +238,8 @@ public class UserManager {
     }
     
     /**
-     *
-     * @param iD
+     * This will check if a patient user is unverified or not by comparing its ID against IDs in the unverfied list
+     * @param iD The ID of the patient that is being checked
      * @return
      */
     public Boolean checkIfUnverified(String iD)
@@ -253,6 +253,11 @@ public class UserManager {
         }
         
         return false;
+    }
+    
+    public void addUserToUnverified(User user)
+    {
+        unverifiedPatients.add(user);
     }
     
 //    public Boolean registerNewPatient()

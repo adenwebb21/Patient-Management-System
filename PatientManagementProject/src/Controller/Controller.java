@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
 import java.util.ArrayList;
 
 /**
- *
+ * This is the controller class. It acts as the go-between for the model and the view.
  * @author awebb4
  */
 
@@ -29,25 +29,9 @@ public class Controller  {
     
     private String lastTempPatientiD;
 
-//    @Override
-//    public void actionPerformed (ActionEvent e)
-//    {        
-//        JButton tempBtn = (JButton)e.getSource();
-//        String soruceName = tempBtn.getName();
-//        
-//        //System.out.println(soruceName);
-//        /*
-//        if (soruceName == "btn_login")
-//        {
-//            System.out.println("Dab it works my G!");
-//            
-//        }
-//*/
-//    }
-
     /**
-     *
-     * @return
+     * This is used to get the most recently logged in with patient ID. It is accessed from the view.
+     * @return Returns the ID as a string for use with referencing recent logged in users.
      */
 
     public String getLastTempPatientiD() {
@@ -55,9 +39,9 @@ public class Controller  {
     }   
     
     /**
-     *
-     * @param userId
-     * @param password
+     * This method is used when someone wants to log into the system. It opens up the correct JFrame for the type of user that is trying to log in.
+     * @param userId This is the text entered into the ID (username) box on the view
+     * @param password This is the text entered into the password box on the view
      */
     public void LogIn(String userId, String password)
     {
@@ -121,7 +105,7 @@ public class Controller  {
     }
     
     /**
-     *
+     * The log out method simply sets the login screen to visible, ready for the next person to log in
      */
     public void logOut()
     {
@@ -129,15 +113,15 @@ public class Controller  {
     }
     
     /**
-     *
-     * @param addLine1
-     * @param city
-     * @param postcode
-     * @param fName
-     * @param lName
-     * @param sex
-     * @param age
-     * @param password
+     * This method is called when a new patient is trying to register to the system
+     * @param addLine1 The patients address line 1
+     * @param city The patients city
+     * @param postcode The patients postcode
+     * @param fName The patients first name
+     * @param lName The patients last name
+     * @param sex The patients sex
+     * @param age The patients age
+     * @param password The patients password
      */
     public void registerPatientButton(String addLine1, String city, String postcode, String fName, String lName, String sex, int age, String password)
     {
@@ -148,9 +132,9 @@ public class Controller  {
     }
     
     /**
-     *
-     * @param iD
-     * @return
+     * Tells the user manager to remove this account
+     * @param iD The iD of the account to remove
+     * @return This returns a boolean that indicates whether or not it was successful 
      */
     public Boolean removeUserAccount(String iD)
     {
@@ -165,14 +149,14 @@ public class Controller  {
     }
     
     /**
-     *
-     * @param type
-     * @param fName
-     * @param lName
-     * @param age
-     * @param pWord
-     * @param sex
-     * @return
+     * This is a method used by the administrator that can create new doctors or secretaries
+     * @param type A character indicating what type of user has been created
+     * @param fName The first name of the new user
+     * @param lName The last name of the new user
+     * @param age The age of the new user
+     * @param pWord The password of the new user
+     * @param sex The sex of the new user
+     * @return Returns a boolean to indicate whether or not the user has been created successfully
      */
     public Boolean createNewUser(char type, String fName, String lName, int age, String pWord, String sex)
     {
@@ -194,8 +178,8 @@ public class Controller  {
     }
     
     /**
-     *
-     * @return
+     * Returns a list of all the doctor
+     * @return returns the list of doctors (users)
      */
     public ArrayList<User> getAllDoctors()
     {
@@ -204,8 +188,8 @@ public class Controller  {
     }
     
     /**
-     *
-     * @return
+     * Returns a list of all current secretaries
+     * @return returns the list
      */
     public ArrayList<User> getAllSecs()
     {
@@ -214,8 +198,8 @@ public class Controller  {
     }
     
     /**
-     *
-     * @return
+     * Returns a list of all unverified patient accounts
+     * @return returns a list
      */
     public ArrayList<User> getAllUnverified()
     {
@@ -224,10 +208,10 @@ public class Controller  {
     }
     
     /**
-     *
-     * @param doctorId
-     * @param date
-     * @param patientId
+     * Allows a patient to propose an appointment
+     * @param doctorId The ID of the doctor to be involved in the appointment
+     * @param date The date that the appointment is to take place on
+     * @param patientId The patient that the appointment is concerning
      */
     public void proposeAppointment(String doctorId, String date, String patientId)
     {
@@ -235,9 +219,9 @@ public class Controller  {
     }
     
     /**
-     *
-     * @param iDToValidate
-     * @return
+     * Tells the user manager to validate a patient and move it from the unvalidated list to the validated one
+     * @param iDToValidate The ID of the user to validate
+     * @return returns whether or not the validation was successful
      */
     public Boolean validatePatient(String iDToValidate)
     {

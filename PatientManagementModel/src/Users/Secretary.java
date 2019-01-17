@@ -10,7 +10,7 @@ import PatientManagementModel.UserManager;
 import java.util.ArrayList;
 
 /**
- *
+ * The User type Secretary
  * @author adenw
  */
 public class Secretary extends User {
@@ -21,7 +21,7 @@ public class Secretary extends User {
     private UserManager userManager = UserManager.getInstance();
     
     /**
-     *
+     * A secretary creator method with just an ID
      * @param iD
      */
     public Secretary(String iD)
@@ -30,7 +30,7 @@ public class Secretary extends User {
     }
 
     /**
-     *
+     * A complete secretary creator method
      * @param iD
      * @param givenName
      * @param surName
@@ -43,26 +43,26 @@ public class Secretary extends User {
     }
 
     /**
-     *
-     * @return
+     * Retrieve a list of all the patients waiting for approval
+     * @return returns the list
      */
     public ArrayList<Patient> getWaitingForApproval() {
         return waitingForApproval;
     }
 
     /**
-     *
-     * @param patientToApprove
+     * Allows the secretary to add a patient to the waiting list for approval
+     * @param patientToApprove The patient
      */
     public void addToWaitingListForApproval(Patient patientToApprove) {
         System.out.println(this.iD + ": Added patient " + patientToApprove.iD + " to waiting list");
         waitingForApproval.add(patientToApprove);
     }
     
-    /**
-     *
-     * @param idealDoc
-     * @param patient
+    /** 
+     * Allows the secretary to create a specific appointment request
+     * @param idealDoc The desired doctor
+     * @param patient The patient
      */
     public void addToAppointmentRequests(Doctor idealDoc, Patient patient)
     {
@@ -73,8 +73,8 @@ public class Secretary extends User {
     }
 
     /**
-     *
-     * @param p
+     * This allows the secretary to approve a currently pending patient account
+     * @param p The patient p is the one to be approcved
      * @return
      */
     public Patient approvePendingPatientAccount(Patient p) {
@@ -95,8 +95,8 @@ public class Secretary extends User {
     }
     
     /**
-     *
-     * @param app
+     * Allows the creation of an appointment that has been passed through
+     * @param app The appointment to be confirmed
      */
     public void createAppointment(Appointment app)
     {

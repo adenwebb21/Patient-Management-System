@@ -6,7 +6,7 @@
 package PatientManagementModel;
 
 /**
- *
+ * The class to hold the medicine details
  * @author awebb4
  */
 public class Medicine {

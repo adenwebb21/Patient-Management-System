@@ -21,20 +21,20 @@ public class Doctor extends User{
     private ArrayList<String> doctorRating = new ArrayList();
     
     /**
-     *
-     * @param iD
+     * The constructor for the doctor with just an ID
+     * @param iD The ID to be provided
      */
     public Doctor(String iD) {
         super(iD);
     }
 
     /**
-     *
-     * @param iD
-     * @param givenName
-     * @param surName
-     * @param sex
-     * @param age
+     * A more detailed constructor for the doctor
+     * @param iD ID
+     * @param givenName First name
+     * @param surName Last Name
+     * @param sex Sex
+     * @param age age
      * @param password
      */
     public Doctor(String iD, String givenName, String surName, String sex, int age, String password) {
@@ -43,7 +43,7 @@ public class Doctor extends User{
     }
 
     /**
-     *
+     * Returns the doctors rating
      * @return
      */
     public ArrayList<String> getDoctorRating() {
@@ -51,7 +51,7 @@ public class Doctor extends User{
     }
 
     /**
-     *
+     * Sets the doctors rating
      * @param doctorRating
      */
     public void setDoctorRating(ArrayList<String> doctorRating) {
@@ -59,8 +59,8 @@ public class Doctor extends User{
     }
     
     /**
-     *
-     * @param note
+     * adds a note to the doctor
+     * @param note The note itself
      */
     public void addNote(String note)
     {
@@ -68,8 +68,8 @@ public class Doctor extends User{
     }
     
     /**
-     *
-     * @param patient
+     * Views the history of this particular doctors patients
+     * @param patient The patient to view the history of
      */
     public void viewPatientHistory(Patient patient)
     {
@@ -77,8 +77,8 @@ public class Doctor extends User{
     }
     
     /**
-     *
-     * @param newAppointment
+     * Creates a new appointment
+     * @param newAppointment The new appointment
      */
     public void createAppointment(Appointment newAppointment)
     {
@@ -87,10 +87,10 @@ public class Doctor extends User{
     }
     
     /**
-     *
-     * @param patient
-     * @param medicine
-     * @param dosage
+     * A function for the doctor to prescribe medicine
+     * @param patient The patient to prescribe medicine to
+     * @param medicine The medicine to be prescribed
+     * @param dosage The dosage of the medicine to be prescribed
      */
     public void prescribeMedicine(Patient patient, Medicine medicine, int dosage)
     {

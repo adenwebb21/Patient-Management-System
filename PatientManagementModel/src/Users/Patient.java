@@ -9,7 +9,7 @@ import PatientManagementModel.*;
 import java.util.ArrayList;
 
 /**
- *
+ * The patient class for this user type
  * @author adenw
  */
 public class Patient extends User{
@@ -22,8 +22,8 @@ public class Patient extends User{
     private String addLine1, city, postcode;
     
     /**
-     *
-     * @param currentAppointment
+     * Function allows you to set the current appointment of the patient
+     * @param currentAppointment The appointment to be provided
      */
     public void setCurrentAppointment(Appointment currentAppointment) {
         System.out.println("Recieved appointment with " + currentAppointment.getDoctor().iD);
@@ -31,7 +31,7 @@ public class Patient extends User{
     }
      
     /**
-     *
+     * Constructor for the patient
      * @param iD
      * @param givenName
      * @param surName
@@ -42,7 +42,7 @@ public class Patient extends User{
     }
 
     /**
-     *
+     * Shorter constructor for the patient
      * @param iD
      * @param password
      */
@@ -51,16 +51,16 @@ public class Patient extends User{
     }
 
     /**
-     *
-     * @param iD
-     * @param addLine1
-     * @param city
-     * @param postcode
-     * @param givenName
-     * @param surName
-     * @param sex
-     * @param age
-     * @param password
+     * Longest constructor for the patient
+     * @param iD The ID
+     * @param addLine1 Line one of the address
+     * @param city The city of the patient
+     * @param postcode The postcode for the patient
+     * @param givenName The first name
+     * @param surName The surname
+     * @param sex The sex of the patient
+     * @param age The age
+     * @param password The passworsd
      */
     public Patient(String iD, String addLine1, String city, String postcode, String givenName, String surName, String sex, int age, String password) {
         super(iD, givenName, surName, sex, age, password);
@@ -70,7 +70,7 @@ public class Patient extends User{
     }
     
     /**
-     *
+     * This function allows the patient to request account creation from a specific secretary
      * @param sec
      */
     public void requestAccountCreation(Secretary sec) {
@@ -192,7 +192,7 @@ public class Patient extends User{
     }
     
     /**
-     *
+     * This function will allow the patient to rate a specific doctor
      * @param doctor
      * @param rating
      */
@@ -204,7 +204,7 @@ public class Patient extends User{
     }
     
     /**
-     *
+     * View the rating of a specific doctor
      * @param doctor
      */
     public void viewDoctorRating(Doctor doctor)
@@ -213,9 +213,9 @@ public class Patient extends User{
     }
     
     /**
-     *
-     * @param doctor
-     * @param sec
+     * The patyient can request an appointment with a specific doctor and through a specific secretary
+     * @param doctor The doctor to have the appointment with
+     * @param sec The secretary to book the appointment through
      */
     public void requestAppointment(Doctor doctor, Secretary sec)
     {

@@ -9,7 +9,7 @@ import PatientManagementModel.UserManager;
 import java.util.ArrayList;
 
 /**
- *
+ * This is the administrator class
  * @author adenw
  */
 public class Administrator extends User{
@@ -17,7 +17,7 @@ public class Administrator extends User{
     private UserManager userManager = UserManager.getInstance();
     
     /**
-     *
+     * A constructor to create the administrator with only an ID
      * @param iD
      */
     public Administrator(String iD) {
@@ -25,13 +25,13 @@ public class Administrator extends User{
     }
 
     /**
-     *
-     * @param iD
-     * @param password
-     * @param givenName
-     * @param surName
-     * @param age
-     * @param sex
+     * A constructor to make an admin with more details
+     * @param iD The ID of the admin
+     * @param password The password of the admin
+     * @param givenName The first name of the admin
+     * @param surName The last name of the admin
+     * @param age The age of the admin
+     * @param sex The sex of the admin
      */
     public Administrator(String iD, String password, String givenName, String surName, int age, String sex) {
         super(iD, password, givenName, surName, age, sex);
@@ -46,13 +46,13 @@ public class Administrator extends User{
     }
     
     /**
-     *
-     * @param iD
-     * @param password
-     * @param givenName
-     * @param surName
-     * @param age
-     * @param sex
+     * This allows the admin to create a doctor account
+     * @param iD The ID of the doctor account
+     * @param password The password for the new doctor
+     * @param givenName The first name for the new doctor
+     * @param surName The last name for the new doctor
+     * @param age The age for the new doctor
+     * @param sex The sex of the new doctor 
      * @return
      */
     public Doctor addDoctorAccount(String iD, String password, String givenName, String surName, int age, String sex)
@@ -71,13 +71,13 @@ public class Administrator extends User{
     }
     
     /**
-     *
-     * @param iD
-     * @param password
-     * @param givenName
-     * @param surName
-     * @param age
-     * @param sex
+     * Adding the new secretary account
+     * @param iD The ID of the new secretary account
+     * @param password The password of the new secretary account
+     * @param givenName The first name of the new secretary
+     * @param surName The last name of the new secretary
+     * @param age The age of the new secretary
+     * @param sex The sex of the new secretary
      * @return
      */
     public Secretary addSecretaryAccount(String iD, String password,String givenName, String surName, int age, String sex)
@@ -96,8 +96,8 @@ public class Administrator extends User{
     }
     
     /**
-     *
-     * @param doctor
+     * View the rating of a particular doctor
+     * @param doctor The doctor to look at the review of
      */
     public void viewDoctorRating(Doctor doctor)
     {
@@ -105,7 +105,7 @@ public class Administrator extends User{
     }
     
     /**
-     *
+     * The function to provide feedback to the doctor
      * @param doctor
      * @param feedback
      */
