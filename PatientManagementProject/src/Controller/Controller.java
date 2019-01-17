@@ -68,7 +68,7 @@ public class Controller  {
                         adminView.setVisible(true);
                         break;
                     case 'S':
-                        secretaryView = new SecretaryView();
+                        secretaryView = new SecretaryView(this);
                         secretaryView.setVisible(true);
                         break;
                     case 'P':
@@ -147,6 +147,12 @@ public class Controller  {
     public ArrayList<User> getAllSecs()
     {
         ArrayList<User> temp = userManager.returnAllSecretaries();
+        return temp;
+    }
+    
+    public ArrayList<User> getAllUnverified()
+    {
+        ArrayList<User> temp = userManager.returnAllUnverified();
         return temp;
     }
 }

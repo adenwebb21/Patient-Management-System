@@ -87,7 +87,7 @@ public class UserManager {
                 break;
             case 'T':
                 newId = String.format("T%04d", numTempPat);
-                numPat++;
+                numTempPat++;
                 break;
             default:
                 break;
@@ -109,6 +109,11 @@ public class UserManager {
         }
         
         return tempDoctors;
+    }
+    
+    public ArrayList<User> returnAllUnverified()
+    {
+        // return patients with T ID
     }
     
     public ArrayList<User> returnAllSecretaries()
