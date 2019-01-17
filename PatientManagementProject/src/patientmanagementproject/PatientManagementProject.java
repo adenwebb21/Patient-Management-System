@@ -33,14 +33,14 @@ public class PatientManagementProject {
         //login.AddListener(cont);
         login.setVisible(true);
         
-        Administrator a1 = new Administrator(userManager.generateUserId('A'), "admin0", "Wilma", "Russel", 34, "female");
+        Administrator a1 = new Administrator(userManager.generateUserId('A'), "Wilma", "Russel", "female", 34, "admin0");
         
         userManager.addUser(a1);
              
-        Doctor d1 = a1.addDoctorAccount(userManager.generateUserId('D'), "doc0", "Paul", "Thorne", 23, "male");
+        Doctor d1 = a1.addDoctorAccount(userManager.generateUserId('D'), "Paul", "Thorne", "male", 23, "doc0");
         userManager.addUser(d1);
         
-        Secretary s1 = a1.addSecretaryAccount(userManager.generateUserId('S'), "sec0", "Georga", "Huynh", 32, "female");
+        Secretary s1 = a1.addSecretaryAccount(userManager.generateUserId('S'), "Georga", "Huynh", "female", 32, "sec0");
         userManager.addUser(s1);
         
         //Secretary s1 = a1.addSecretaryAccount(userManager.generateUserId('S'));

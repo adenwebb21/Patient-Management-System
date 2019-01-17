@@ -125,12 +125,13 @@ public class Controller  {
         
         if(type == 'D')
         {
-            temp = new Doctor(userManager.generateUserId('D'), pWord, fName, lName, age, sex);
+            System.out.println(fName + "FROM CONTROLLER");
+            temp = new Doctor(userManager.generateUserId('D'), fName, lName, sex, age, pWord);
             userManager.addUser(temp);
         }
         else if(type == 'S')
         {
-            temp = new Secretary(userManager.generateUserId('S'), pWord, fName, lName, age, sex);
+            temp = new Secretary(userManager.generateUserId('S'), fName, lName, sex, age, pWord);
             userManager.addUser(temp);
         }
               

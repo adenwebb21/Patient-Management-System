@@ -52,6 +52,7 @@ public class AdminView extends javax.swing.JFrame {
         txt_userToRemove = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         lbl_loginTitle = new javax.swing.JLabel();
+        btn_logOut = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         lbl_loginTitle1 = new javax.swing.JLabel();
         drp_type = new javax.swing.JComboBox<>();
@@ -172,6 +173,14 @@ public class AdminView extends javax.swing.JFrame {
         lbl_loginTitle.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         lbl_loginTitle.setText("Admin");
 
+        btn_logOut.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btn_logOut.setText("Log Out");
+        btn_logOut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_logOutActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -182,7 +191,8 @@ public class AdminView extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(txt_userToRemove, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_removeUser, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbl_loginTitle))
+                    .addComponent(lbl_loginTitle)
+                    .addComponent(btn_logOut, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
@@ -213,7 +223,8 @@ public class AdminView extends javax.swing.JFrame {
                         .addComponent(txt_userToRemove, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btn_removeUser, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btn_logOut, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
 
@@ -401,6 +412,11 @@ public class AdminView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_newSexActionPerformed
 
+    private void btn_logOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_logOutActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_btn_logOutActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -474,6 +490,7 @@ public class AdminView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_addUser;
+    private javax.swing.JButton btn_logOut;
     private javax.swing.JButton btn_removeUser;
     private javax.swing.JComboBox<String> drp_type;
     private javax.swing.JLabel jLabel1;

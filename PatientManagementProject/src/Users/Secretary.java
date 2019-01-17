@@ -26,8 +26,8 @@ public class Secretary extends User {
         super(iD);       
     }
 
-    public Secretary(String iD, String password, String givenName, String surName, int age, String sex) {
-        super(iD, password, givenName, surName, age, sex);
+    public Secretary(String iD, String givenName, String surName, String sex, int age, String password) {
+        super(iD, givenName, surName, sex, age, password);
     }
 
     public ArrayList<Patient> getWaitingForApproval() {

@@ -24,8 +24,9 @@ public class Doctor extends User{
         super(iD);
     }
 
-    public Doctor(String iD, String password, String givenName, String surName, int age, String sex) {
-        super(iD, password, givenName, surName, age, sex);
+    public Doctor(String iD, String givenName, String surName, String sex, int age, String password) {
+        super(iD, givenName, surName, sex, age, password);
+        System.out.println(givenName + "FROM DOCTOR");
     }
 
     public ArrayList<String> getDoctorRating() {
