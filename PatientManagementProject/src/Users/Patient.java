@@ -29,8 +29,11 @@ public class Patient extends User{
      
     public Patient(String iD, String givenName, String surName)
     {
-        super(iD, givenName, surName);
-        
+        super(iD, givenName, surName);       
+    }
+
+    public Patient(String iD, String password) {
+        super(iD, password);
     }
 
     public Patient(String iD, String addLine1, String city, String postcode, String givenName, String surName, String sex, int age, String password) {
@@ -52,6 +55,48 @@ public class Patient extends User{
         return iD;
     }
 
+    public Appointment getCurrentAppointment() {
+        return currentAppointment;
+    }
+
+    public Prescription getCurrentPrescription() {
+        return currentPrescription;
+    }
+
+    public String getAddLine1() {
+        return addLine1;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getPostcode() {
+        return postcode;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public String getGivenName() {
+        return givenName;
+    }
+
+    public String getSurName() {
+        return surName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    
+    
     public void setiD(String iD) {
         this.iD = iD;
     }

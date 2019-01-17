@@ -5,6 +5,7 @@
  */
 package PatientManagementModel;
 
+import Users.Patient;
 import Users.User;
 import java.util.ArrayList;
 
@@ -113,7 +114,17 @@ public class UserManager {
     
     public ArrayList<User> returnAllUnverified()
     {
-        // return patients with T ID
+        ArrayList<User> tempUnverified = new ArrayList();
+        
+        for(User user : users)
+        {
+            if(user.getiD().charAt(0) == 'T' && !user.getGivenName().equals(""))
+            {
+                tempUnverified.add(user);
+            }
+        }
+        
+        return tempUnverified;
     }
     
     public ArrayList<User> returnAllSecretaries()
@@ -140,6 +151,30 @@ public class UserManager {
             if(user.getiD().equals(iD) && (tempFChar == 'S' || tempFChar == 'D'))
             {
                 users.remove(user);
+                return true;
+            }
+        }
+        
+        return false;
+    }
+    
+    public Boolean validatePatient(String iD)
+    {
+        
+        for(User user : unverifiedPatients)
+        {
+            if(user.getiD().equals(iD))
+            {
+                Patient shell = new Patient(user.getiD(), user.getPassword());
+                
+                user.setiD(generateUserId('P'));
+                unverifiedPatients.remove(user);
+                users.add(shell);
+                
+                System.out.println(unverifiedPatients.size());
+                System.out.println(shell.getiD() + "VERIFIED FROM USERMANAGER");
+                System.out.println(user.getiD() + "VERIFIED FROM USERMANAGER");
+                
                 return true;
             }
         }

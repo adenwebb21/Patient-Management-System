@@ -155,4 +155,16 @@ public class Controller  {
         ArrayList<User> temp = userManager.returnAllUnverified();
         return temp;
     }
+    
+    public Boolean validatePatient(String iDToValidate)
+    {
+        if(userManager.validatePatient(iDToValidate))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

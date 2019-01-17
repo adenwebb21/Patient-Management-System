@@ -8,6 +8,7 @@ package View;
 import Controller.Controller;
 import Users.User;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -25,6 +26,8 @@ public class SecretaryView extends javax.swing.JFrame {
     public SecretaryView(Controller controller) {
         initComponents();
         thisController = controller;
+        
+        setUpTable();
     }
     
     public void setUpTable()
@@ -34,18 +37,18 @@ public class SecretaryView extends javax.swing.JFrame {
         
         tbl_unverifiedUsers.setModel(tableModel);
         
-        unverifiedUsers = thisController.getAllDoctors();
+        unverifiedUsers = thisController.getAllUnverified();
         
         // swap out get all doctors with get all unverified
         //then populate table with that data
         // remember to update on button click
         // also needs the return all methoid in the user manager
         
-        for(User user : doctors)
+        for(User user : unverifiedUsers)
         {
             Object[] objs = {user.getiD(), user.getGivenName(), user.getSurName()};
             System.out.println(user.getiD() + user.getGivenName() + user.getSurName());
-            docTableModel.addRow(objs);
+            tableModel.addRow(objs);
         }
     }
 
@@ -204,6 +207,16 @@ public class SecretaryView extends javax.swing.JFrame {
 
     private void btn_authenticateUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_authenticateUserActionPerformed
         // TODO add your handling code here:
+        String iDToValidate = txt_userToRemove.getText();
+        
+        if(thisController.validatePatient(iDToValidate))
+        {
+            setUpTable();
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Patient does not exist in this list", "Error", JOptionPane.ERROR_MESSAGE);
+        }
         
     }//GEN-LAST:event_btn_authenticateUserActionPerformed
 

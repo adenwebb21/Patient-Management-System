@@ -52,7 +52,7 @@ public class Secretary extends User {
         if(waitingForApproval.contains(p))
         {
             System.out.println(this.iD + ": Assigning patient " + p.givenName + " " + p.surName + " a new ID");
-            p.setiD(userManager.generateUserId('C'));
+            p.setiD(userManager.generateUserId('P'));
             System.out.println(this.iD + ": New ID is " + p.iD);
             
             return p;

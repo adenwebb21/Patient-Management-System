@@ -22,6 +22,11 @@ public abstract class User {
         this.iD = iD;
     }
 
+    public User(String iD, String password) {
+        this.iD = iD;
+        this.password = password;
+    }
+    
     public User(String iD, String givenName, String surName) {
         this.iD = iD;
         this.givenName = givenName;
@@ -69,6 +74,12 @@ public abstract class User {
     public String getSex() {
         return sex;
     }
+
+    public void setiD(String iD) {
+        this.iD = iD;
+    }
+    
+    
     
     
     
