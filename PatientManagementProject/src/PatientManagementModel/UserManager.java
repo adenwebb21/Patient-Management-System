@@ -18,6 +18,8 @@ public class UserManager {
     
     private ArrayList<User> users;
     
+    private ArrayList<User> unverifiedPatients;
+    
     private int numDoc = 0;
     private int numSec = 0;
     private int numPat = 0;
@@ -26,6 +28,7 @@ public class UserManager {
     
     private UserManager() {
         users = new ArrayList();
+        unverifiedPatients = new ArrayList();
     }
     
     public static UserManager getInstance()
@@ -47,6 +50,17 @@ public class UserManager {
     public void addUser(User newUser)
     {
         users.add(newUser);
+        
+        for(User user : users)
+        {
+            System.out.println(user.getiD());
+            System.out.println(user.getPassword());
+        }
+    }
+    
+    public void addUnverified(User newPat)
+    {
+        unverifiedPatients.add(newPat);
     }
     
     public String generateUserId(char type)
@@ -72,7 +86,7 @@ public class UserManager {
                 numPat++;
                 break;
             case 'T':
-                newId = String.format("P%04d", numTempPat);
+                newId = String.format("T%04d", numTempPat);
                 numPat++;
                 break;
             default:

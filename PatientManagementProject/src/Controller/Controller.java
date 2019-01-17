@@ -23,8 +23,9 @@ public class Controller  {
     AdminView adminView;
     SecretaryView secretaryView;
     PatientView patientView;
+    UnverifiedView unverifiedView;
     
-    UserManager userManager;
+    UserManager userManager = UserManager.getInstance();
     
     private String lastTempPatientiD;
 
@@ -52,8 +53,6 @@ public class Controller  {
     {
         Boolean correctLogin = false;
         
-        userManager = UserManager.getInstance();
-        
         for(User user : userManager.getUsers())
         {
             if(user.getiD().equals(userId) && user.getPassword().equals(password))
@@ -79,7 +78,10 @@ public class Controller  {
                     case 'D':
                         doctorView = new DoctorView();
                         doctorView.setVisible(true);
-                        break;
+                        break;     
+                    case 'T':
+                        unverifiedView = new UnverifiedView(this);
+                        unverifiedView.setVisible(true);
                     default:
                         break;
                 }
@@ -92,11 +94,17 @@ public class Controller  {
         }
     }
     
+    public void logOut()
+    {
+        login.setVisible(true);
+    }
+    
     public void registerPatientButton(String addLine1, String city, String postcode, String fName, String lName, String sex, int age, String password)
     {
         lastTempPatientiD = userManager.generateUserId('T');
         Patient newPatient = new Patient(lastTempPatientiD, addLine1, city, postcode, fName, lName, sex, age, password);
-        userManager.addUser(newPatient);        
+        userManager.addUser(newPatient);  
+        userManager.addUnverified(newPatient);
     }
     
     public Boolean removeUserAccount(String iD)

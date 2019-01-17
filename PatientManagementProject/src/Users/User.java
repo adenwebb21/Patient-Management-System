@@ -35,7 +35,7 @@ public abstract class User {
         this.password = password;
     }
 
-    public User(String iD, String password, String givenName, String surName, int age, String sex) {
+    public User(String iD, String givenName, String surName, String sex, int age, String password) {
         this.iD = iD;
         this.password = password;
         this.givenName = givenName;
