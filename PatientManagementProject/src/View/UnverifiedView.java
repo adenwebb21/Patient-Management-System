@@ -14,13 +14,35 @@ import Controller.Controller;
 public class UnverifiedView extends javax.swing.JFrame {
 
     private Controller thisController;
+    private Boolean verificationStatus = false;
+    
+    private String iDNumber;
     /**
      * Creates new form UnverifiedView
      */
     public UnverifiedView(Controller controller) {
         initComponents();
-        thisController = controller;
+        thisController = controller;      
     }
+    
+    public void isUserVerified(Boolean status, String iDNums)
+    {
+        iDNumber = iDNums;
+        verificationStatus = status;
+    }
+    
+    public void displayVerificationStatus()
+    {
+        if(verificationStatus)
+        {
+            lbl_verificationStatus.setText("Your account has been verified. Your new ID is: " + "P" + iDNumber);
+        }
+        else
+        {
+            lbl_verificationStatus.setText("Your account has not yet been verified. Check back later.");
+        }
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -32,7 +54,7 @@ public class UnverifiedView extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lbl_verificationStatus = new javax.swing.JLabel();
         btn_logOut = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -40,8 +62,8 @@ public class UnverifiedView extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Temporary User");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel2.setText("Your account has not yet been verified. Check back later.");
+        lbl_verificationStatus.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lbl_verificationStatus.setText("Your account has not yet been verified. Check back later.");
 
         btn_logOut.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btn_logOut.setText("Log Out");
@@ -59,7 +81,7 @@ public class UnverifiedView extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
-                    .addComponent(jLabel2)
+                    .addComponent(lbl_verificationStatus)
                     .addComponent(btn_logOut))
                 .addContainerGap(39, Short.MAX_VALUE))
         );
@@ -69,7 +91,7 @@ public class UnverifiedView extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel2)
+                .addComponent(lbl_verificationStatus)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 196, Short.MAX_VALUE)
                 .addComponent(btn_logOut)
                 .addContainerGap())
@@ -121,6 +143,6 @@ public class UnverifiedView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_logOut;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel lbl_verificationStatus;
     // End of variables declaration//GEN-END:variables
 }

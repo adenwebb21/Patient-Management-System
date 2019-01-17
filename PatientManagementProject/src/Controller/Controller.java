@@ -80,8 +80,23 @@ public class Controller  {
                         doctorView.setVisible(true);
                         break;     
                     case 'T':
-                        unverifiedView = new UnverifiedView(this);
+                           
+                        unverifiedView = new UnverifiedView(this);  
+                        
+                        if(userManager.checkIfUnverified(user.getiD()))
+                        {
+                            unverifiedView.isUserVerified(false, "000");
+                        }
+                        else
+                        {
+                            String iDNums;
+                            unverifiedView.isUserVerified(true, iDNums = user.getiD().substring(user.getiD().length() - 3));
+                        }
+                        
+                        unverifiedView.displayVerificationStatus();
+                        
                         unverifiedView.setVisible(true);
+                        
                     default:
                         break;
                 }

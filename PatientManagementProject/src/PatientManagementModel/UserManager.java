@@ -170,11 +170,20 @@ public class UserManager {
                 user.setiD(generateUserId('P'));
                 unverifiedPatients.remove(user);
                 users.add(shell);
-                
-                System.out.println(unverifiedPatients.size());
-                System.out.println(shell.getiD() + "VERIFIED FROM USERMANAGER");
-                System.out.println(user.getiD() + "VERIFIED FROM USERMANAGER");
-                
+                              
+                return true;
+            }
+        }
+        
+        return false;
+    }
+    
+    public Boolean checkIfUnverified(String iD)
+    {
+        for(User user : unverifiedPatients)
+        {
+            if(user.getiD().equals(iD))
+            {
                 return true;
             }
         }
