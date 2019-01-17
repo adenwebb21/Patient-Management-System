@@ -40,6 +40,12 @@ public class PatientManagementProject {
         Doctor d1 = a1.addDoctorAccount(userManager.generateUserId('D'), "Paul", "Thorne", "male", 23, "doc0");
         userManager.addUser(d1);
         
+        Doctor d2 = a1.addDoctorAccount(userManager.generateUserId('D'), "John", "Smith", "male", 56, "doc1");
+        userManager.addUser(d2);
+        
+        Doctor d3 = a1.addDoctorAccount(userManager.generateUserId('D'), "Sarah", "Jones", "female", 43, "doc2");
+        userManager.addUser(d3);
+        
         Secretary s1 = a1.addSecretaryAccount(userManager.generateUserId('S'), "Georga", "Huynh", "female", 32, "sec0");
         userManager.addUser(s1);
         
